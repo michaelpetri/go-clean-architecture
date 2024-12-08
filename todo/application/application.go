@@ -1,11 +1,11 @@
 package application
 
 import (
-	"com.michael-petri.todo/adapter/cli/commands"
-	"com.michael-petri.todo/application/usecase"
-	"com.michael-petri.todo/domain/model"
-	"com.michael-petri.todo/domain/repository"
-	"com.michael-petri.todo/infrastructure/in_memory"
+	"com.michael-petri/todo/adapter/cli/commands"
+	"com.michael-petri/todo/application/usecase"
+	"com.michael-petri/todo/domain/model"
+	"com.michael-petri/todo/domain/repository"
+	"com.michael-petri/todo/infrastructure/in_memory"
 	"context"
 	"github.com/spf13/cobra"
 	"go.uber.org/fx"

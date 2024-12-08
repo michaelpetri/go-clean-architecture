@@ -1,6 +1,6 @@
 package model
 
-import "com.michael-petri.todo/domain/value"
+import "com.michael-petri/todo/domain/value"
 
 type Todo struct {
 	Id          *value.TodoId

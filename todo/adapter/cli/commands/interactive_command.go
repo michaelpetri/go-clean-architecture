@@ -2,7 +2,7 @@ package commands
 
 import (
 	"bufio"
-	"com.michael-petri.todo/application/usecase"
+	"com.michael-petri/todo/application/usecase"
 	"fmt"
 	"github.com/spf13/cobra"
 	"os"

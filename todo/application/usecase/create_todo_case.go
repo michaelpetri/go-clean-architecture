@@ -1,9 +1,9 @@
 package usecase
 
 import (
-	"com.michael-petri.todo/domain/model"
-	"com.michael-petri.todo/domain/repository"
-	"com.michael-petri.todo/domain/value"
+	"com.michael-petri/todo/domain/model"
+	"com.michael-petri/todo/domain/repository"
+	"com.michael-petri/todo/domain/value"
 )
 
 type CreateTodoCase struct {

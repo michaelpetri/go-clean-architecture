@@ -1,8 +1,8 @@
 package commands
 
 import (
-	"com.michael-petri.todo/application/usecase"
-	"com.michael-petri.todo/domain/model"
+	"com.michael-petri/todo/application/usecase"
+	"com.michael-petri/todo/domain/model"
 	"fmt"
 	"github.com/spf13/cobra"
 	"os"

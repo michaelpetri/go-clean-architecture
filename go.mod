@@ -1,4 +1,4 @@
-module com.michael-petri.todo
+module com.michael-petri
 
 go 1.23
 

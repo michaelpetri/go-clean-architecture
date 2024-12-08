@@ -1,8 +1,8 @@
 package in_memory
 
 import (
-	"com.michael-petri.todo/domain/model"
-	"com.michael-petri.todo/domain/value"
+	"com.michael-petri/todo/domain/model"
+	"com.michael-petri/todo/domain/value"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

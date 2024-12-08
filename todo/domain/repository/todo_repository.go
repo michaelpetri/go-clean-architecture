@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"com.michael-petri.todo/domain/model"
-	"com.michael-petri.todo/domain/value"
+	"com.michael-petri/todo/domain/model"
+	"com.michael-petri/todo/domain/value"
 )
 
 type TodoRepository interface {
