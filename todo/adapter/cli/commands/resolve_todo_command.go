@@ -16,15 +16,13 @@ func NewResolveTodoCommand(create *usecase.ResolveTodoCase) *cobra.Command {
 		Long:  `Resolves a todo by its id`,
 		Args:  cobra.ExactArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
-			idValue, parseErr := strconv.ParseInt(args[0], 10, 64)
+			idValue, parseErr := strconv.ParseUint(args[0], 10, 64)
 
 			if parseErr != nil {
 				fmt.Printf("Failed to parse todo id: %s", parseErr.Error())
 			}
 
-			id := &value.TodoId{
-				Value: idValue,
-			}
+			id := value.NewTodoId(idValue)
 
 			err := create.Invoke(id)
 

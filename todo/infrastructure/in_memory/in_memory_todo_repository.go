@@ -8,10 +8,10 @@ import (
 )
 
 type InMemoryTodoRepository struct {
-	todos *map[int64]*model.Todo
+	todos *map[uint64]*model.Todo
 }
 
-func NewInMemoryTodoRepository(data *map[int64]*model.Todo) repository.TodoRepository {
+func NewInMemoryTodoRepository(data *map[uint64]*model.Todo) repository.TodoRepository {
 	return InMemoryTodoRepository{
 		data,
 	}
@@ -40,9 +40,9 @@ func (r InMemoryTodoRepository) All() ([]*model.Todo, error) {
 func (r InMemoryTodoRepository) Save(todo *model.Todo) (*value.TodoId, error) {
 	nextIdValue := len(*r.todos) + 1
 
-	todo.Id = &value.TodoId{
-		Value: int64(nextIdValue),
-	}
+	todo.Id = value.NewTodoId(
+		uint64(nextIdValue),
+	)
 
 	(*r.todos)[todo.Id.Value] = todo
 

@@ -1,5 +1,11 @@
 package value
 
 type TodoId struct {
-	Value int64
+	Value uint64
+}
+
+func NewTodoId(value uint64) *TodoId {
+	return &TodoId{
+		Value: value,
+	}
 }

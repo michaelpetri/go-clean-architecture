@@ -8,7 +8,7 @@ import (
 )
 
 func TestSaveNewTodo(t *testing.T) {
-	inMemoryState := make(map[int64]*model.Todo)
+	inMemoryState := make(map[uint64]*model.Todo)
 	todos := NewInMemoryTodoRepository(&inMemoryState)
 
 	id, err := todos.Save(
@@ -27,10 +27,10 @@ func TestSaveNewTodo(t *testing.T) {
 }
 
 func TestUpdateExistingTodo(t *testing.T) {
-	inMemoryState := make(map[int64]*model.Todo)
+	inMemoryState := make(map[uint64]*model.Todo)
 
 	preExisting := model.NewTodo("Implement repository")
-	preExisting.Id = &value.TodoId{Value: 1337}
+	preExisting.Id = value.NewTodoId(1337)
 
 	inMemoryState[preExisting.Id.Value] = preExisting
 
@@ -50,10 +50,10 @@ func TestUpdateExistingTodo(t *testing.T) {
 }
 
 func TestGetExisting(t *testing.T) {
-	inMemoryState := make(map[int64]*model.Todo)
+	inMemoryState := make(map[uint64]*model.Todo)
 
 	preExisting := model.NewTodo("Implement database repository")
-	preExisting.Id = &value.TodoId{Value: 1337}
+	preExisting.Id = value.NewTodoId(1337)
 
 	inMemoryState[preExisting.Id.Value] = preExisting
 
@@ -70,7 +70,7 @@ func TestGetExisting(t *testing.T) {
 }
 
 func TestAll(t *testing.T) {
-	inMemoryState := make(map[int64]*model.Todo)
+	inMemoryState := make(map[uint64]*model.Todo)
 
 	inMemoryState[0] = model.NewTodo("Implement database repository")
 	inMemoryState[1] = model.NewTodo("Write more tests")
@@ -88,10 +88,10 @@ func TestAll(t *testing.T) {
 }
 
 func TestResolve(t *testing.T) {
-	inMemoryState := make(map[int64]*model.Todo)
+	inMemoryState := make(map[uint64]*model.Todo)
 
 	preExisting := model.NewTodo("Implement database repository")
-	preExisting.Id = &value.TodoId{Value: 1337}
+	preExisting.Id = value.NewTodoId(1337)
 
 	inMemoryState[preExisting.Id.Value] = preExisting
 
